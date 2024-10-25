@@ -5,6 +5,9 @@
     <title>{{ title }}</title>
 </head>
 <body>
-<h1>{{ title }}</h1>
+<h1>{{ title|upper }}</h1>
+{% with number=10 %}
+<p>{{ menu|join:" | " }}</p>
+{% endwith %}
 </body>
 </html>

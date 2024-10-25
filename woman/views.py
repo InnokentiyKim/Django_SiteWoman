@@ -1,6 +1,7 @@
 from django.http import Http404, HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 
+menu = ['О сайте', 'Добавить статью', 'Обратная связь', 'Войти']
 
 def categories(request, cat_id):
     if cat_id > 1000:
@@ -17,8 +18,8 @@ def page_not_found(request, exception):
 
 
 def index(request):
-    context = {'title': 'Главная страница сайта'}
-    return render(request, 'woman/index.html', context)
+    context = {'title': 'главная страница сайта', 'menu': menu}
+    return render(request, 'woman/index.html', context=context)
 
 
 def about(request):
